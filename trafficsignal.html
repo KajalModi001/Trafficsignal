@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+<style>
+   
+#traffic-signal > div{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: .3;
+}
+
+
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#red{
+    background-color: red;
+}
+</style>
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+    </head>
+
+    <body onload = startTrafficSignal()>
+        <br>
+        <center><div id="traffic-signal">
+            <div id="green"></div><br>
+            <div id="yellow"></div><br>
+            <div id="red"></div>
+        </div></center>
+       
+    </body>
+</html>
+
+<script>
+    function startTrafficSignal () 
+{
+    var green=document.getElementById("green");
+    var red=document.getElementById("red");
+    var yellow=document.getElementById("yellow");
+ 
+    green.style.opacity=1;
+
+
+    setTimeout(function () 
+    {
+        green.style.opacity=.3;
+        red.style.opacity=.3;
+        yellow.style.opacity=1;
+    },5000);
+ 
+    setTimeout(function () 
+    {
+        green.style.opacity=.3;
+        red.style.opacity=1;
+        yellow.style.opacity=.3;
+    },7000);
+ 
+    setTimeout(function () 
+    {
+        green.style.opacity=1;
+        red.style.opacity=.3;
+        yellow.style.opacity=.3;
+    },12000);
+}
+ 
+startTrafficSignal();
+
+</script>
